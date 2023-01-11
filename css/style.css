@@ -13,6 +13,7 @@ body {
     background-color: lightcoral;
 }
 
+/* --- HEADER --- */
 header {
     background-color: aliceblue;
     padding: 1.1rem;
@@ -39,16 +40,13 @@ header {
 
 header #playBtn {
     padding: 0.2rem 1rem;
+    cursor: pointer;
 }
 
+/* --- MAIN --- */
 main {
     background-color: lightcoral;
     padding: 2.5rem;
-}
-
-footer {
-    background-color: aliceblue;
-    padding: 1.1rem;
 }
 
 .grid {
@@ -61,6 +59,7 @@ footer {
     flex-wrap: wrap;
 
     box-shadow: 0px 10px 5px 5px rgba(0, 0, 0, 0.5);
+    opacity: 0;
 }
 
 .grid .cell {
@@ -75,9 +74,12 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+
     cursor: pointer;
+    user-select: none;
 }
 
+/* Per nascondere i border visibili su bordo della griglia */
 .grid .cell:nth-child(n + 91) {
     border-bottom: none;
 }
@@ -88,4 +90,18 @@ footer {
 
 .cell:hover {
     background-color: rgb(255, 255, 255);
+}
+
+.cell.active {
+    background-color: lightblue;
+}
+
+.grid.show {
+    opacity: 1;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: aliceblue;
+    padding: 1.1rem;
 }
